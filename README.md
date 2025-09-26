@@ -4,14 +4,23 @@ Este repositório fornece funções úteis para duplicar Pull Requests no GitHub
 
 ## 🚀 Instalação Rápida
 
+### Linux/macOS/WSL
 Execute o comando abaixo no seu terminal:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/install.sh | bash
 ```
 
-Ou instale manualmente:
+### Windows (PowerShell)
+Execute o comando abaixo no PowerShell:
 
+```powershell
+iex (iwr -Uri "https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/install.ps1").Content
+```
+
+### Instalação Manual
+
+#### Linux/macOS/WSL
 ```bash
 curl -o ~/.clone-pr.sh https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/clone-pr.sh
 echo "source ~/.clone-pr.sh" >> ~/.bashrc
@@ -19,10 +28,29 @@ echo "source ~/.clone-pr.sh" >> ~/.zshrc
 source ~/.clone-pr.sh
 ```
 
+#### Windows (PowerShell)
+```powershell
+$ProfileDir = Split-Path $PROFILE -Parent
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/clone-pr.ps1" -OutFile "$ProfileDir\clone-pr.ps1"
+Add-Content $PROFILE ". `"$ProfileDir\clone-pr.ps1`""
+. "$ProfileDir\clone-pr.ps1"
+```
+
 ## 📋 Pré-requisitos
 
 - [GitHub CLI (gh)](https://cli.github.com/) instalado e configurado
 - Acesso aos repositórios onde você deseja duplicar PRs
+
+## 💻 Compatibilidade
+
+| Sistema Operacional | Suporte | Método de Instalação |
+|-------------------|---------|-------------------|
+| Linux | ✅ Completo | curl + bash |
+| macOS | ✅ Completo | curl + bash |
+| Windows + WSL | ✅ Completo | curl + bash |
+| Windows + Git Bash | ✅ Completo | curl + bash |
+| Windows + PowerShell | ✅ Completo | PowerShell script |
+| Windows + CMD | ⚠️ Limitado | Instalação manual necessária |
 
 ## 📖 Uso
 
@@ -107,4 +135,13 @@ pr-dup minha-org/meu-projeto 101 main
 - O comando não faz merge automaticamente, apenas cria o novo PR
 - Revise sempre os PRs criados antes de fazer merge
 
+## 🤝 Contribuindo
 
+Contribuições são bem-vindas! Sinta-se à vontade para:
+- Reportar bugs
+- Sugerir melhorias
+- Enviar pull requests
+
+## 📝 Licença
+
+MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
