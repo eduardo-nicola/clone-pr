@@ -2,6 +2,15 @@
 
 Este repositório fornece funções úteis para duplicar Pull Requests no GitHub usando a CLI do GitHub (`gh`).
 
+## ⚠️ Pré-requisitos
+
+- [GitHub CLI (gh)](https://cli.github.com/) instalado e configurado
+- Acesso aos repositórios onde você deseja duplicar PRs
+- Logado no `gh` com `gh auth login`
+
+```bash
+gh auth login
+```
 ## 🚀 Instalação Rápida
 
 ### Linux/macOS/WSL
@@ -17,29 +26,6 @@ Execute o comando abaixo no PowerShell:
 ```powershell
 iex (iwr -Uri "https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/install.ps1").Content
 ```
-
-### Instalação Manual
-
-#### Linux/macOS/WSL
-```bash
-curl -o ~/.clone-pr.sh https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/clone-pr.sh
-echo "source ~/.clone-pr.sh" >> ~/.bashrc
-echo "source ~/.clone-pr.sh" >> ~/.zshrc
-source ~/.clone-pr.sh
-```
-
-#### Windows (PowerShell)
-```powershell
-$ProfileDir = Split-Path $PROFILE -Parent
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/eduardo-nicola/clone-pr/main/clone-pr.ps1" -OutFile "$ProfileDir\clone-pr.ps1"
-Add-Content $PROFILE ". `"$ProfileDir\clone-pr.ps1`""
-. "$ProfileDir\clone-pr.ps1"
-```
-
-## 📋 Pré-requisitos
-
-- [GitHub CLI (gh)](https://cli.github.com/) instalado e configurado
-- Acesso aos repositórios onde você deseja duplicar PRs
 
 ## 💻 Compatibilidade
 
